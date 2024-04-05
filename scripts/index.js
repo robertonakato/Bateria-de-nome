@@ -10,7 +10,13 @@ document.querySelector(".botao").addEventListener("click", ()=>{
     tocarmusica(arraymusica)
  }
 })
-function tocarsom(som){
+
+document.querySelectorAll(".key").forEach(key => {
+    key.addEventListener("click", () => {
+        tocarsom(`${key.dataset.key}`);
+    });
+    
+});function tocarsom(som){
 let audio = document.querySelector(`#s_${som}`);
 let keyelement = document.querySelector(`div[data-key="${som}"]`);
 if (audio){
